@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="css/main_style.css">
+</head>
+<body>
+  <script>
+      if(localStorage.getItem('isLoggedIn') !== 'true' || localStorage.getItem('role') !== 'student'){
+          window.location.href = "login.html";
+      }
+  </script>
+
+  <header>
+      <h1>Welcome Student</h1>
+      <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main>
+      <section>
+          <h2>AI-guided First Aid</h2>
+          <div id="chatbox"><div id="chatMessages"></div></div>
+          <input type="text" id="userMessage" placeholder="Type here...">
+          <button id="sendBtn">Send</button>
+      </section>
+
+      <section>
+          <h2>Book Appointment</h2>
+          <form id="bookingForm">
+              <label>Name:</label>
+              <input type="text" id="studentName" required>
+              <label>Email:</label>
+              <input type="email" id="email" required>
+              <label>Date:</label>
+              <input type="date" id="date" required>
+              <label>Time:</label>
+              <input type="time" id="time" required>
+              <button type="submit">Book</button>
+          </form>
+          <p id="bookingMessage"></p>
+      </section>
+  </main>
+
+  <script src="js/main_script.js"></script>
+</body>
+</html>
+

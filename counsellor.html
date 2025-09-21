@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counsellor Dashboard</title>
+  <link rel="stylesheet" href="css/main_style.css">
+</head>
+<body>
+  <script>
+      if(localStorage.getItem('isLoggedIn') !== 'true' || localStorage.getItem('role') !== 'counsellor'){
+          window.location.href = "login.html";
+      }
+  </script>
+
+  <header>
+      <h1>Welcome </h1>
+      <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main>
+      <section>
+          <h2>Student Appointments</h2>
+          <ul id="appointmentsList">
+              <!-- You can dynamically populate appointments here -->
+              <li>John Doe - 25 Sep 2025, 10:00 AM</li>
+              <li>Jane Smith - 26 Sep 2025, 2:00 PM</li>
+          </ul>
+      </section>
+
+      <section>
+          <h2>Peer Chat Monitoring</h2>
+          <div id="chatbox"><div id="chatMessages"></div></div>
+      </section>
+  </main>
+
+  <script src="js/main_script.js"></script>
+</body>
+</html>
+
